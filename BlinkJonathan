@@ -1,0 +1,78 @@
+// ------------
+// Blink an LED
+// ------------
+
+
+// First, we're going to make some variables.
+
+
+
+int led2 = D7; // Instead of writing D7 over and over again, we'll write led2
+// This one is the little blue LED on your board. On the Photon it is next to D7, and on the Core it is next to the USB jack.
+
+void setup() {
+//void setup runs once
+  
+  pinMode(led2, OUTPUT);
+//This sets pin "led2", also known as D7 (see above), as an output pin. In other words, it will light up when i say so
+}
+//Each of these functions may be called later by writing "functionname();". Otherwise, they will not run
+void morsedot(){ digitalWrite(led2, HIGH);
+    delay(70);
+    digitalWrite(led2, LOW);
+    delay(300);}
+    
+void morsedash(){digitalWrite(led2, HIGH);
+    delay(200);
+    digitalWrite(led2, LOW);
+    delay(300);}
+//morsedot and morsedash simply turn the LED on for a brief moment, then off.
+void letterJ() {
+   morsedot();
+   morsedash();
+   morsedash();
+   morsedash();
+}
+//These letter functions call the morsedot and morsedash equivilant to the letter in morse code. 
+//Ideally, i would make one for every letter, but i don't need to here.
+void letterO() {
+       morsedash();
+   morsedash();
+   morsedash();
+}
+void letterN() {
+    morsedash();
+    morsedot();
+}
+void letterA() {
+    morsedot();
+    morsedash();
+}
+void letterT() {
+    morsedash();
+}
+void letterH() {
+    morsedot();
+    morsedot();
+    morsedot();
+    morsedot();
+}
+
+
+void loop() {
+  //The loop runs over and over indefinately.
+//calling each letter function, to spell my name. Which is Jonathan, by the way.
+    letterJ();
+    letterO();
+    letterN();
+    letterA();
+    letterT();
+    letterH();
+    letterA();
+    letterN();
+
+
+  // And repeat!
+}
+
+
